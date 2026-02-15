@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مبانی فیزیک | مفاهیم پایه‌ای | آکادمی فیزیک</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- MathJax for mathematical formulas -->
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f7fa;
+            color: #2c3e50;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        .top-bar {
+            background-color: #1e3c5c;
+            color: white;
+            padding: 8px 0;
+            font-size: 0.9rem;
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contact-info span {
+            margin-left: 20px;
+        }
+
+        .contact-info i {
+            margin-left: 5px;
+        }
+
+        .social-icons a {
+            color: white;
+            margin-right: 15px;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .social-icons a:hover {
+            opacity: 0.8;
+        }
+
+        .main-header {
+            background: linear-gradient(135deg, #2a4b7c 0%, #1e3c5c 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .main-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 2.2rem;
+            font-weight: 300;
+            margin-bottom: 5px;
+        }
+
+        .logo p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        .logo a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .search-box {
+            display: flex;
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            width: 300px;
+        }
+
+        .search-box input {
+            flex: 1;
+            border: none;
+            padding: 10px 15px;
+            outline: none;
+            font-size: 0.95rem;
+        }
+
+        .search-box button {
+            background: #ffb74d;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .search-box button:hover {
+            background: #ffa726;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 15px 25px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: all 0.3s;
+            border-bottom: 3px solid transparent;
+        }
+
+        nav ul li a:hover, nav ul li a.active {
+            color: #1e3c5c;
+            border-bottom-color: #ffb74d;
+            background-color: #f5f5f5;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100"><circle cx="20" cy="20" r="2" fill="white"/><circle cx="80" cy="30" r="2" fill="white"/><circle cx="50" cy="60" r="2" fill="white"/><circle cx="30" cy="80" r="2" fill="white"/><circle cx="70" cy="70" r="2" fill="white"/><circle cx="50" cy="50" r="20" stroke="white" stroke-width="1" fill="none"/><line x1="30" y1="50" x2="70" y2="50" stroke="white" stroke-width="1"/><line x1="50" y1="30" x2="50" y2="70" stroke="white" stroke-width="1"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .page-header p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .breadcrumb {
+            margin-top: 20px;
+        }
+
+        .breadcrumb a {
+            color: #ffb74d;
+            text-decoration: none;
+        }
+
+        .breadcrumb span {
+            color: white;
+            margin: 0 10px;
+        }
+
+        /* Introduction Section */
+        .intro-section {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .intro-section h2 {
+            color: #1e3c5c;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .intro-section p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #555;
+        }
+
+        /* Quick Links */
+        .quick-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 40px 0;
+        }
+
+        .quick-link {
+            padding: 12px 25px;
+            background: white;
+            border-radius: 30px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+            border: 1px solid #eee;
+        }
+
+        .quick-link:hover {
+            background: #1e3c5c;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(30,60,92,0.2);
+        }
+
+        .quick-link i {
+            margin-left: 8px;
+            color: #ffb74d;
+        }
+
+        .quick-link:hover i {
+            color: white;
+        }
+
+        /* Section Styles */
+        .section-title {
+            font-size: 2.2rem;
+            color: #1e3c5c;
+            margin: 60px 0 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #ffb74d;
+            position: relative;
+        }
+
+        .section-title i {
+            color: #ffb74d;
+            margin-left: 10px;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .concept-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            border: 1px solid #eee;
+        }
+
+        .concept-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, #1e3c5c, #2a4b7c);
+            color: white;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .card-header i {
+            font-size: 2.5rem;
+            color: #ffb74d;
+        }
+
+        .card-header h3 {
+            font-size: 1.4rem;
+        }
+
+        .card-body {
+            padding: 25px;
+        }
+
+        .formula-box {
+            background: #f5f7fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            text-align: center;
+            font-size: 1.2rem;
+            direction: ltr;
+            border-right: 4px solid #ffb74d;
+        }
+
+        .example-box {
+            background: #fff8e1;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-right: 4px solid #ffb74d;
+        }
+
+        .example-box i {
+            color: #ffb74d;
+            margin-left: 10px;
+        }
+
+        .unit-box {
+            background: #e8f4f8;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-size: 0.95rem;
+        }
+
+        .unit-box i {
+            color: #1e3c5c;
+            margin-left: 8px;
+        }
+
+        /* Table Styles */
+        .table-container {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background: #1e3c5c;
+            color: white;
+            padding: 12px;
+            font-weight: 500;
+        }
+
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        tr:hover {
+            background: #f5f7fa;
+        }
+
+        .prefix-table td:first-child {
+            font-weight: bold;
+            color: #1e3c5c;
+        }
+
+        /* Info Box */
+        .info-box {
+            background: linear-gradient(135deg, #fff8e1, #fff);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            border-right: 5px solid #ffb74d;
+        }
+
+        .info-box h4 {
+            color: #1e3c5c;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box i {
+            color: #ffb74d;
+        }
+
+        /* Two Column Layout */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        /* Fun Facts */
+        .fun-fact {
+            background: #1e3c5c;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .fun-fact i {
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+            font-size: 4rem;
+            opacity: 0.2;
+            color: #ffb74d;
+        }
+
+        .fun-fact h4 {
+            color: #ffb74d;
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0a1a2a;
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-section h4::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 50px;
+            height: 2px;
+            background: #ffb74d;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li a {
+            color: #b0bec5;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section ul li a:hover {
+            color: white;
+        }
+
+        .footer-section p {
+            color: #b0bec5;
+            margin-bottom: 10px;
+        }
+
+        .footer-section i {
+            margin-left: 10px;
+            color: #ffb74d;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #b0bec5;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .main-header .container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .logo {
+                margin-bottom: 15px;
+            }
+
+            .search-box {
+                width: 100%;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="contact-info">
+                <span><i class="fas fa-phone"></i> </span>
+                <span><i class="fas fa-envelope"></i> </span>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-telegram"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" style="color: white;">
+                    <h1>آکادمی فیزیک</h1>
+                    <p>دانش بنیادین هستی</p>
+                </a>
+            </div>
+            <div class="search-box">
+                <input type="text" placeholder="جستجو در مبانی فیزیک...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">صفحه اصلی</a></li>
+                <li><a href="#" class="active">مبانی فیزیک</a></li>
+                <li><a href="physics-classical.html">فیزیک کلاسیک</a></li>
+                <li><a href="physics-modern.html">فیزیک مدرن</a></li>
+                <li><a href="scientists.html">فیزیکدانان</a></li>
+                <li><a href="biographies.html">زندگینامه‌ها</a></li>
+                <li><a href="#">تماس با ما</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>مبانی فیزیک</h1>
+            <p>از مفاهیم پایه‌ای تا قوانین بنیادی جهان هستی</p>
+            <div class="breadcrumb">
+                <a href="index.html">صفحه اصلی</a>
+                <span>></span>
+                <span>مبانی فیزیک</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction -->
+    <section class="container">
+        <div class="intro-section">
+            <h2><i class="fas fa-lightbulb"></i> فیزیک چیست؟</h2>
+            <p>فیزیک علم مطالعه ماده، انرژی، فضا و زمان و بررسی قوانین حاکم بر جهان طبیعی است. از ذرات زیراتمی تا کهکشان‌های عظیم، همه تحت قوانین فیزیک عمل می‌کنند. در این بخش با مفاهیم پایه‌ای فیزیک آشنا می‌شویم.</p>
+        </div>
+    </section>
+
+    <!-- Quick Links -->
+    <div class="container">
+        <div class="quick-links">
+            <a href="#quantities" class="quick-link"><i class="fas fa-ruler"></i> کمیت‌ها و واحدها</a>
+            <a href="#mechanics" class="quick-link"><i class="fas fa-arrows-alt"></i> مکانیک</a>
+            <a href="#thermodynamics" class="quick-link"><i class="fas fa-temperature-high"></i> ترمودینامیک</a>
+            <a href="#electromagnetism" class="quick-link"><i class="fas fa-bolt"></i> الکترومغناطیس</a>
+            <a href="#optics" class="quick-link"><i class="fas fa-lightbulb"></i> اپتیک</a>
+            <a href="#modern" class="quick-link"><i class="fas fa-atom"></i> فیزیک مدرن</a>
+        </div>
+    </div>
+
+    <!-- Quantities and Units Section -->
+    <section class="container" id="quantities">
+        <h2 class="section-title"><i class="fas fa-ruler"></i> کمیت‌های فیزیکی و یکاها</h2>
+        
+        <div class="two-column">
+            <div class="concept-card">
+                <div class="card-header">
+                    <i class="fas fa-weight"></i>
+                    <h3>کمیت‌های اصلی</h3>
+                </div>
+                <div class="card-body">
+                    <p>در فیزیک، ۷ کمیت اصلی وجود دارد که بقیه کمیت‌ها از ترکیب آن‌ها به دست می‌آیند:</p>
+                    <div class="table-container" style="padding: 0; margin: 15px 0;">
+                        <table>
+                            <tr><th>کمیت</th><th>یکا (SI)</th><th>نماد</th></tr>
+                            <tr><td>طول</td><td>متر (m)</td><td>L</td></tr>
+                            <tr><td>جرم</td><td>کیلوگرم (kg)</td><td>M</td></tr>
+                            <tr><td>زمان</td><td>ثانیه (s)</td><td>T</td></tr>
+                            <tr><td>جریان الکتریکی</td><td>آمپر (A)</td><td>I</td></tr>
+                            <tr><td>دما</td><td>کلوین (K)</td><td>Θ</td></tr>
+                            <tr><td>مقدار ماده</td><td>مول (mol)</td><td>N</td></tr>
+                            <tr><td>شدت نور</td><td>کاندلا (cd)</td><td>J</td></tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="concept-card">
+                <div class="card-header">
+                    <i class="fas fa-calculator"></i>
+                    <h3>کمیت‌های نرده‌ای و برداری</h3>
+                </div>
+                <div class="card-body">
+                    <div class="info-box" style="margin: 0 0 15px 0;">
+                        <h4><i class="fas fa-arrow-left"></i> کمیت نرده‌ای (Scalar)</h4>
+                        <p>فقط اندازه دارد. مثال: جرم، دما، انرژی، زمان</p>
+                    </div>
+                    <div class="info-box" style="margin: 0;">
+                        <h4><i class="fas fa-arrows-alt"></i> کمیت برداری (Vector)</h4>
+                        <p>هم اندازه و هم جهت دارد. مثال: نیرو، سرعت، شتاب</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="concept-card">
+            <div class="card-header">
+                <i class="fas fa-microscope"></i>
+                <h3>پیشوندهای SI</h3>
+            </div>
+            <div class="card-body">
+                <div class="table-container" style="padding: 0; margin: 0;">
+                    <table class="prefix-table">
+                        <tr><th>پیشوند</th><th>نماد</th><th>ضریب</th><th>مثال</th></tr>
+                        <tr><td>گیگا</td><td>G</td><td>۱۰⁹</td><td>۱ گیگاهرتز = ۱۰⁹ هرتز</td></tr>
+                        <tr><td>مگا</td><td>M</td><td>۱۰⁶</td><td>۱ مگاوات = ۱۰⁶ وات</td></tr>
+                        <tr><td>کیلو</td><td>k</td><td>۱۰³</td><td>۱ کیلومتر = ۱۰۰۰ متر</td></tr>
+                        <tr><td>هکتو</td><td>h</td><td>۱۰²</td><td>۱ هکتوپاسکال = ۱۰۰ پاسکال</td></tr>
+                        <tr><td>دسی</td><td>d</td><td>۱۰⁻¹</td><td>۱ دسی‌بل = ۰.۱ بل</td></tr>
+                        <tr><td>سانتی</td><td>c</td><td>۱۰⁻²</td><td>۱ سانتی‌متر = ۰.۰۱ متر</td></tr>
+                        <tr><td>میلی</td><td>m</td><td>۱۰⁻³</td><td>۱ میلی‌ثانیه = ۰.۰۰۱ ثانیه</td></tr>
+                        <tr><td>میکرو</td><td>μ</td><td>۱۰⁻⁶</td><td>۱ میکرومتر = ۱۰⁻⁶ متر</td></tr>
+                        <tr><td>نانو</td><td>n</td><td>۱۰⁻⁹</td><td>۱ نانومتر = ۱۰⁻⁹ متر</td></tr>
+                        <tr><td>پیکو</td><td>p</td><td>۱۰⁻¹²</td><td>۱ پیکوفاراد = ۱۰⁻¹² فاراد</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mechanics Section -->
+    <section class="container" id="mechanics">
+        <h2 class="section-title"><i class="fas fa-arrows-alt"></i> مکانیک</h2>
+        
+        <div class="card-grid">
+            <!-- Kinematics -->
+            <div class="concept-card">
+                <div class="card-header">
+                    <i class="fas fa-road"></i>
+                    <h3>حرکت‌شناسی (کینماتیک)</h3>
+                </div>
+                <div class="card-body">
+                    <p><strong>جابجایی:</strong> تغییر مکان جسم (بردار)</p>
+                    <p><strong>سرعت متوسط:</strong> \( v = \frac{\Delta x}{\Delta t} \)</p>
+                    <p><strong>شتاب متوسط:</strong> \( a = \frac{\Delta v}{\Delta t} \)</p>
+                    
+                    <div class="formula-box">
+                        معادلات حرکت با شتاب ثابت:
+                        \[ v = v_0 + at \]
+                        \[ x = x_0 + v_0t + \frac{1}{2}at^2 \]
+                        \[ v^2 = v_0^2 + 2a(x - x_0) \]
+                    </div>
+
+                    <div class="example-box">
+                        <i class="fas fa-car"></i>
+                        <strong>مثال:</strong> اتومبیلی از حالت سکون با شتاب ۲ m/s² حرکت می‌کند. سرعت پس از ۵ ثانیه: 
+                        \[ v = 0 + 2×5 = 10 \text{ m/s} \]
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dynamics -->
+            <div class="concept-card">
+                <div class="card-header">
+                    <i class="fas fa-balance-scale"></i>
+                    <h3>دینامیک (قوانین نیوتن)</h3>
+                </div>
+                <div class="card-body">
+                    <div class="info-box" style="margin: 0 0 10px 0; padding: 10px;">
+                        <strong>قانون اول (لختی):</strong> هر جسم ساکن یا متحرک یکنواخت می‌ماند مگر نیرویی خارجی بر آن اثر کند.
+                    </div>
+                    <div class="info-box" style="margin: 0 0 10px 0; padding: 10px;">
+                        <strong>قانون دوم:</strong> \( \vec{F} = m\vec{a} \)
+                    </div>
+                    <div class="info-box" style="margin: 0 0 10px 0; padding: 10px;">
+                        <strong>قانون سوم:</strong> هر عملی را عکس‌العملی است برابر و در خلاف جهت.
+                    </div>
+                    <div class="formula-box">
+                        نیروی وزن: \( W = mg \)
+                        <br>نیروی اصطکاک: \( f = \mu N \)
+                    </div>
+                </div>
+            </div>
+
+            <!-- Energy and Work -->
+            <div class="concept-card">
+                <div class="card-header">
+                    <i class="fas fa-bolt"></i>
+                    <h3>کار و انرژی</h3>
+                </div>
+                <div class="card-body">
+                    <p><strong>کار:</strong> \( W = F \cdot d \cdot \cos\theta \)</p>
+                    <p><strong>انرژی جنبشی:</strong> \( K = \frac{1}{2}mv^2 \)</p>
+                    <p><strong>انرژی پتانسیل گرانشی:</strong> \( U = mgh \)</p>
+                    <div class="formula-box">
+                        قانون پایستگی انرژی مکانیکی:
+                        \[ K_1 + U_1 = K_2 + U_2 \]
+                    </div>
+                    <div class="unit-box">
+                        <i class="fas fa-flask"></i> یکای کار و انرژی: ژول (J)
+                    </div>
+                </div>
+            </div>
+
+            <!-- Momentum -->
+            <div class="concept-card">
+                <div class="card-header">
+                    <i class="fas fa-bowling-ball"></i>
+                    <h3>تکانه و ضربه</h3>
+                </div>
+                <div class="card-body">
+                    <p><strong>تکانه خطی:</strong> \( \vec{p} = m\vec{v} \)</p>
+                    <p><strong>ضربه:</strong> \( J = \vec{F}\Delta t = \Delta \vec{p} \)</p>
+                    <div class="formula-box">
+                        قانون پایستگی تکانه:
+                        \[ \vec{p}_1 + \vec{p}_2 = \text{ثابت} \]
+                    </div>
+                    <div class="example-box">
+                        <i class="fas fa-basketball-ball"></i>
+                        <strong>مثال:</strong> در برخورد دو جسم، تکانه کل قبل و بعد از برخورد برابر است.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Thermodynamics Section -->
+    <section class="container" id="thermodynamics">
+        <h2 class="section-title"><i class="fas fa-temperature-high"></i> ترمودینامیک</h2>
+        
+        <div class="card-grid">
+            <!-- Temperature -->
+            <div class="concept-card">
+                <div class="card-header">
+                    <i class="fas fa-thermometer-half"></i>
+                    <h3>دما و گرما</h3>
+                </div>
+                <div class="card-body">
+                    <p><strong>دما:</strong> معیار میانگین انرژی جنبشی مولکول‌ها</p>
+                    <p><strong>گرما:</strong> انرژی منتقل شده بین دو جسم با دمای متفاوت</p>
+                    <div class="formula-box">
+                        تبدیل واحد دما:
+                        \[ T(K) = T(°C) + 273.15 \]
+                        \[ T(°F) = \frac{9}{5}T(°C) + 32 \]
+                    </div>
+                    <div class="unit-box">
+                        <i class="fas fa-thermometer-half"></i> واحد دما: کلوین (K) و سلسیوس (°C)
+                    </div>
+                </div>
+            </div>
+
+            <!-- Heat Transfer -->
+            <div class="concept-card">
+                <div class="card-header">
+                    <i class="fas fa-fire"></i>
+                    <h3>انتقال گرما</h3>
+                </div>
+                <div class="card-body">
+                    <p><strong>رسانش:</strong> انتقال گرما در جامدات</p>
+                    <p><strong>همرفت:</strong> انتقال گرما در شاره‌ها</p>
+                    <p><strong>تابش:</strong> انتقال گرما با امواج الکترومغناطیسی</p>
+                    <div class="formula-box">
+                        ظرفیت گرمایی ویژه:
+                        \[ Q = mc\Delta T \]
+                    </div>
+                </div>
+            </div>
+
+            <!-- Laws of Thermodynamics -->
+            <div class="concept-card">
+                <div class="card-header">
+                    <i class="fas fa-balance-scale"></i>
+                    <h3>قوانین ترمودینامیک</h3>
+                </div>
+                <div class="card-body">
+                    <div class="info-box" style="margin: 0 0 10px 0; padding: 10px;">
+                        <strong>قانون صفرم:</strong> اگر دو سیستم با سیستم سوم در تعادل باشند، با هم در تعادلند.
+                    </div>
+                    <div class="info-box" style="margin: 0 0 10px 0; padding: 10px;">
+                        <strong>قانون اول:</strong> \( \Delta U = Q - W \) 
+                        <br>(پایستگی انرژی)
+                    </div>
+                    <div class="info-box" style="margin: 0 0 10px 0; padding: 10px;">
+                        <strong>قانون دوم:</strong> آنتروپی هر سیستم منزوی افزایش می‌یابد.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gas Laws -->
+            <div class="concept-card">
+                <div class="card-header">
+                    <i class="fas fa-wind"></i>
+                    <h3>قوانین گازها</h3>
+                </div>
+                <div class="card-body">
+                    <p><strong>قانون بویل:</strong> \( P_1V_1 = P_2V_2 \) (دمای ثابت)</p>
+                    <p><strong>قانون شارل:</strong> \( \frac{V_1}{T_1} = \frac{V_2}{T_2} \) (فشار ثابت)</p>
+                    <div class="formula-box">
+                        قانون گاز کامل:
+                        \[ PV = nRT \]
+                    </div>
+                    <div class="unit-box">
+                        <i class="fas fa-flask"></i> R = ۸.۳۱۴ J/mol·K (ثابت گازها)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Electromagnetism Section -->
+    <section class="container" id="electromagnetism">
+        <h2 class="section-title"><i class="fas fa-bolt"></i> الکتریسیته و مغناطیس</h2>
+        
+        <div class="card-grid">
+            <!-- Electric Charge -->
+            <div class="concept-card">
+                <div class="card-header">
+                    <i class="fas fa-battery-full"></i>
+                    <h3>الکتریسیته ساکن</h3>
+                </div>
+                <div class="card-body">
+                    <p><strong>بار الکتریکی:</strong> q (بر حسب کولن)</p>
+                    <div class="formula-box">
+                        قانون کولن:
+                        \[ F = k\frac{q_1q_2}{r^2} \]
+                        \[ k = 8.99\times10^9 \text{ N·m}^2/\text{C}^2 \]
+                    </div>
+                    <div class="unit-box">
+                        <i class="fas fa-bolt"></i> بار الکترون: e = -۱.۶×۱۰⁻¹⁹ C
+                    </div>
+                </div>
+            </div>
+
+            <!-- Electric Field -->
+            <div class="concept-card">
+                <div class="card-header">
+                    <i class="fas fa-wave-square"></i>
+                    <h3>میدان الکتریکی</h3>
+                </div>
+                <div class="card-body">
+                    <p><strong>میدان الکتریکی:</strong> \( \vec{E} = \frac{\vec{F}}{q} \)</p>
+                    <div class="formula-box">
+                        میدان بار نقطه‌ای:
+                        \[ E = k\frac{q}{r^2} \]
+                    </div>
+                    <p><strong>پتانسیل الکتریکی:</strong> \( V = k\frac{q}{r} \)</p>
+                    <p><strong>انرژی پتانسیل الکتریکی:</strong> \( U = qV \)</p>
+                </div>
+            </div>
+
+            <!-- Electric Current -->
+            <div class="concept-card">
+                <div class="card-header">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>جریان الکتریکی</h3>
+                </div>
+                <div class="card-body">
+                    <p><strong>جریان:</strong> \( I = \frac{\Delta Q}{\Delta t} \)</p>
+                    <div class="formula-box">
+                        قانون اهم:
+                        \[ V = IR \]
+                    </div>
+                    <p><strong>توان الکتریکی:</strong> \( P = VI = I^2R = \frac{V^2}{R} \)</p>
+                    <div class="unit-box">
+                        <i class="fas fa-bolt"></i> واحدها: ولت (V)، آمپر (A)، اهم (Ω)
+                    </div>
+                </div>
+            </div>
+
+            <!-- Circuits -->
+            <div class="concept-card">
+                <div class="card-header">
+                    <i class="fas fa-microchip"></i>
+                    <h3>مدارهای الکتریکی</h3>
+                </div>
+                <div class="card-body">
+                    <p><strong>مقاومت سری:</strong> \( R_s = R_1 + R_2 + ... \)</p>
+                    <p><strong>مقاومت موازی:</strong> \( \frac{1}{R_p} = \frac{1}{R_1} + \frac{1}{R_2} + ... \)</p>
+                    <div class="formula-box">
+                        قوانین کیرشهف:
+                        <br>∑ I = 0 (گره)
+                        <br>∑ V = 0 (حلقه)
+                    </div>
+                </div>
+            </div>
+
+            <!-- Magnetism -->
+            <div class="concept-card">
+                <div class="card-header">
+                    <i class="fas fa-magnet"></i>
+                    <h3>مغناطیس</h3>
+                </div>
+                <div class="card-body">
+                    <p><strong>نیروی مغناطیسی روی بار متحرک:</strong> \( \vec{F} = q\vec{v} \times \vec{B} \)</p>
+                    <p><strong>نیروی روی سیم حامل جریان:</strong> \( F = ILB\sin\theta \)</p>
+                    <div class="formula-box">
+                        قانون القای فارادی:
+                        \[ \mathcal{E} = -\frac{d\Phi_B}{dt} \]
+                    </div>
+                </div>
+            </div>
+
+            <!-- Electromagnetic Waves -->
+            <div class="concept-card">
+                <div class="card-header">
+                    <i class="fas fa-satellite"></i>
+                    <h3>امواج الکترومغناطیسی</h3>
+                </div>
+                <div class="card-body">
+                    <p>سرعت نور در خلأ: \( c = 3\times10^8 \text{ m/s} \)</p>
+                    <div class="formula-box">
+                        \( c = \frac{1}{\sqrt{\mu_0\epsilon_0}} \)
+                    </div>
+                    <p>طیف امواج EM: رادیو، مایکروویو، فروسرخ، نور مرئی، فرابنفش، اشعه X، اشعه گاما</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Optics Section -->
+    <section class="container" id="optics">
+        <h2 class="section-title"><i class="fas fa-lightbulb"></i> اپتیک (نورشناسی)</h2>
+        
+        <div class="card-grid">
+            <!-- Reflection -->
+            <div class="concept-card">
+                <div class="card-header">
+                    <i class="fas fa-arrow-left"></i>
+                    <h3>بازتاب نور</h3>
+                </div>
+                <div class="card-body">
+                    <p><strong>قانون بازتاب:</strong> زاویه تابش = زاویه بازتاب</p>
+                    <p><strong>آینه تخت:</strong> تصویر مجازی، هم‌اندازه با جسم</p>
+                    <div class="formula-box">
+                        آینه کروی:
+                        \[ \frac{1}{f} = \frac{1}{p} + \frac{1}{q} \]
+                    </div>
+                </div>
+            </div>
+
+            <!-- Refraction -->
+            <div class="concept-card">
+                <div class="card-header">
+                    <i class="fas fa-water"></i>
+                    <h3>شکست نور</h3>
+                </div>
+                <div class="card-body">
+                    <div class="formula-box">
+                        قانون اسنل:
+                        \[ n_1\sin\theta_1 = n_2\sin\theta_2 \]
+                    </div>
+                    <p><strong>ضریب شکست:</strong> \( n = \frac{c}{v} \)</p>
+                    <div class="example-box">
+                        <i class="fas fa-water"></i>
+                        <strong>مثال:</strong> ضریب شکست آب ۱.۳۳، شیشه ۱.۵
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lenses -->
+            <div class="concept-card">
+                <div class="card-header">
+                    <i class="fas fa-eye"></i>
+                    <h3>عدسی‌ها</h3>
+                </div>
+                <div class="card-body">
+                    <div class="formula-box">
+                        فرمول عدسی‌ها:
+                        \[ \frac{1}{f} = \frac{1}{p} + \frac{1}{q} \]
+                    </div>
+                    <p><strong>بزرگنمایی:</strong> \( M = -\frac{q}{p} \)</p>
+                    <p>عدسی همگرا (محدب) و واگرا (مقعر)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modern Physics Section -->
+    <section class="container" id="modern">
+        <h2 class="section-title"><i class="fas fa-atom"></i> مبانی فیزیک مدرن</h2>
+        
+        <div class="card-grid">
+            <!-- Quantum Basics -->
+            <div class="concept-card">
+                <div class="card-header">
+                    <i class="fas fa-dice-d6"></i>
+                    <h3>مفاهیم پایه کوانتومی</h3>
+                </div>
+                <div class="card-body">
+                    <p><strong>ثابت پلانک:</strong> \( h = 6.626\times10^{-34} \text{ J·s} \)</p>
+                    <div class="formula-box">
+                        انرژی فوتون:
+                        \[ E = hf \]
+                    </div>
+                    <p><strong>اثر فوتوالکتریک:</strong> اینشتین نشان داد نور از فوتون تشکیل شده است.</p>
+                    <div class="formula-box">
+                        رابطه دوبروی:
+                        \[ \lambda = \frac{h}{p} \]
+                    </div>
+                </div>
+            </div>
+
+            <!-- Atomic Structure -->
+            <div class="concept-card">
+                <div class="card-header">
+                    <i class="fas fa-atom"></i>
+                    <h3>ساختار اتم</h3>
+                </div>
+                <div class="card-body">
+                    <p><strong>مدل بور:</strong> الکترون‌ها در مدارهای کوانتیده حرکت می‌کنند.</p>
+                    <div class="formula-box">
+                        انرژی مدارها:
+                        \[ E_n = -\frac{13.6}{n^2} \text{ eV} \]
+                    </div>
+                    <p>پروتون (بار مثبت) + نوترون + الکترون (بار منفی)</p>
+                </div>
+            </div>
+
+            <!-- Relativity Basics -->
+            <div class="concept-card">
+                <div class="card-header">
+                    <i class="fas fa-clock"></i>
+                    <h3>نسبیت خاص</h3>
+                </div>
+                <div class="card-body">
+                    <p>معروف‌ترین فرمول فیزیک:</p>
+                    <div class="formula-box">
+                        \[ E = mc^2 \]
+                    </div>
+                    <p>اتساع زمان: \( \Delta t = \gamma \Delta t_0 \)</p>
+                    <p>انقباض طول: \( L = L_0/\gamma \)</p>
+                    <div class="unit-box">
+                        <i class="fas fa-clock"></i> γ = \( \frac{1}{\sqrt{1-v^2/c^2}} \)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fun Facts Section -->
+    <section class="container">
+        <div class="fun-fact">
+            <i class="fas fa-lightbulb"></i>
+            <h4><i class="fas fa-star"></i> آیا می‌دانستید؟</h4>
+            <ul style="margin-right: 20px;">
+                <li>سرعت نور حدود ۳۰۰,۰۰۰ کیلومتر در ثانیه است - می‌تواند ۷.۵ بار دور زمین در یک ثانیه بچرخد!</li>
+                <li>دمای صفر مطلق (۰ کلوین) برابر ۲۷۳.۱۵- درجه سلسیوس است و هیچ جسمی نمی‌تواند به آن برسد.</li>
+                <li>الکترون‌ها هم‌زمان می‌توانند در چند مکان باشند (اصل برهم‌نهی کوانتومی).</li>
+                <li>۹۹٪ جرم اتم در هسته آن است و هسته فقط ۱/۱۰۰۰۰ حجم اتم را تشکیل می‌دهد.</li>
+                <li>نور خورشید ۸ دقیقه و ۲۰ ثانیه طول می‌کشد تا به زمین برسد.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>درباره ما</h4>
+                    <p>آکادمی فیزیک با هدف ترویج دانش فیزیک و ایجاد پلی بین مفاهیم پایه‌ای و پیشرفته برای علاقه‌مندان به این علم بنیادین تأسیس شده است.</p>
+                <h1>این سایت توسط محمد جعفر افرازه نوشته شده است</h1>
+                </div>
+                <div class="footer-section">
+                    <h4>دسترسی سریع</h4>
+                    <ul>
+                        <li><a href="index.html">صفحه اصلی</a></li>
+                        <li><a href="#">مبانی فیزیک</a></li>
+                        <li><a href="physics-classical.html">فیزیک کلاسیک</a></li>
+                        <li><a href="physics-modern.html">فیزیک مدرن</a></li>
+                        <li><a href="scientists.html">فیزیکدانان</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>ارتباط با ما</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> گرمسار</p>
+                    <p><i class="fas fa-phone"></i> telegram ID: @afrazehW</p>
+                    <p><i class="fas fa-envelope"></i> موجود نیست</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>تمامی حقوق برای آکادمی فیزیک محفوظ است &copy;  2026,1404</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
